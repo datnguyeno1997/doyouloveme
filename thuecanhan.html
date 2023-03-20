@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Thu nhập</td>
+                <td><input id="TN" type="number"></td>
+            </tr>
+            <tr>
+                <td>Total Amount</td>
+                <td>
+                    <input id="amount" type="text" value="amount" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="calculate()">Calculate</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function calculate() {
+            let TN = document.getElementById('TN').value;
+                let result = (TN < 0) ? "Invalid Thu nhập" :
+                      (TN <= 5000000)  ? TN * 5 / 100 :
+                      (TN <= 10000000) ? TN * 10 / 100 - 1000000 * 0.25 :
+                      (TN <= 18000000) ? TN * 15 / 100 - 1000000 * 0.75 :
+                      (TN <= 32000000) ? TN * 20 / 100 - 1000000 * 1.65 :
+                      (TN <= 52000000) ? TN * 25 / 100 - 1000000 * 3.25 :
+                      (TN <= 80000000) ? TN * 30 / 100 - 1000000 * 5.85 : TN * 35 / 100 - 1000000 * 9.85 
+                document.querySelector('#amount').value = result
+        }
+    </script>
+</body>
+</html>
