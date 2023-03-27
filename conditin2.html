@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chuyển đổi</title>
+</head>
+
+<body>
+    <p>nhập giá trị (m): <input type="text" id="input"></p>
+    <button onclick="convert()">Chuyển đổi</button>
+    <p id="result"></p>
+    <script>
+        function convert() {
+            let valueInMeters = document.getElementById("input").value;
+            let valueInFeet = valueInMeters * 3.2808;
+            document.getElementById("result").innerHTML = `${valueInMeters} m = ${valueInFeet} ft`;
+    }
+    </script>
+</body>
+
+</html>

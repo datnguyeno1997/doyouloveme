@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tính lãi ngân hàng</h1>
+    <form>
+        <label for="principal">Số tiền ban đầu:</label>
+        <input type="number" id="principal" name="principal" required><br>
+
+        <label for="months">Số tháng cho vay:</label>
+        <input type="number" id="months" name="months" required><br>
+
+        <label for="interestRate">Lãi suất hàng tháng:</label>
+        <input type="number" id="interestRate" name="interestRate" required><br>
+
+        <button type="button" onclick="calculateInterest()">Tính toán</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateInterest() {
+            let principal = parseFloat(document.getElementById("principal").value);
+            let months = parseInt(document.getElementById("months").value);
+            let interestRate = parseFloat(document.getElementById("interestRate").value);
+
+            let interest = principal * (interestRate / 100) * months;
+
+            let resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "Lãi của bạn là: " + interest.toFixed(2) + " VNĐ";
+        }
+    </script>
+</body>
+
+</html>
