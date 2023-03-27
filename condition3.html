@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiểm tra số lớn hay nhỏ hơn 0</title>
+</head>
+
+<body>
+    <label for="number">Nhập một số nguyên bất kỳ: </label>
+    <input type="number" id="number">
+    <button onclick="checkNumber()">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            let number = document.getElementById("number").value;
+            if (number < 0) {
+                document.getElementById("result").innerHTML = "Số " + number + " là số âm";
+            } else {
+                document.getElementById("result").innerHTML = "Số " + number + " là số không âm";
+            }
+        }
+    </script>
+</body>
+
+</html>

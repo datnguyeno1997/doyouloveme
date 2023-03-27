@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>giá trị lớn nhất trong ba số nguyên tố</title>
+</head>
+
+<body>
+    <label for="number1">Nhập số thứ nhất:</label>
+    <input type="number" id="number1"><br>
+
+    <label for="number2">Nhập số thứ hai:</label>
+    <input type="number" id="number2"><br>
+
+    <label for="number3">Nhập số thứ ba:</label>
+    <input type="number" id="number3"><br>
+    <button onclick="findMax()">Tìm giá trị lớn nhất</button>
+    <p id="result"></p>
+
+
+    <script>
+        function findMax() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let number3 = document.getElementById("number3").value;
+            let max = number1;
+            if (number2 > max) {
+                max = number2;
+            }
+            if (number3 > max) {
+                max = number3
+            }
+            document.getElementById("result").innerHTML = "Giá trị lớn nhất là: " + max;
+        }
+    </script>
+</body>
+
+</html>
