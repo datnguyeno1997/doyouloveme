@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking</title>
+</head>
+
+<body>
+    <h2>Type anthing slowly</h2>
+    <textarea id="area" cols="50" rows="10" onkeydown="enterValue()"></textarea>
+
+    <script>
+        let count = 0;
+        let characters = ['N', 'g', 'u', 'y', 'ễ', 'n', ' ', 'V', 'ă', 'n', ' ', 'T', 'i', 'ế', 'n', ' ', 'Đ', 'ạ', 't'];
+        let str = "";
+        function enterValue() {
+            setTimeout(function () {
+                if (count == characters.length) {
+                    count = 0;
+                    str = "";
+                    document.getElementById('area').value = "";
+                }
+                else {
+                    str += characters[count];
+                    document.getElementById('area').value = str;
+                    count++;
+                }
+            }, 1)
+        }
+    </script>
+</body>
+
+</html>
