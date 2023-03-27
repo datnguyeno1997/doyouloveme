@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cước điện thoại</title>
+</head>
+
+<body>
+    <label for="minutes">Số phút gọi điện thoại</label>
+    <input type="number" id="minutes"><br>
+    <label for="messages">Số tin nhắn đã gửi</label>
+    <input type="number" id="messages"><br>
+
+    <button onclick="calculatePhoneBill()">Tính cước điện thoại</button>
+    <p id="result"></p>
+
+    <script>
+        function calculatePhoneBill() {
+            let minutes = parseInt(document.getElementById("minutes").value);
+            let messages = parseInt(document.getElementById("messages").value);
+            let callCharge, messagesCharge, totalCharge;
+            if (minutes <= 50) {
+                callCharge = minutes * 600;
+            } else if (minutes <= 200) {
+                callCharge = 50 * 600 + (minutes - 50) * 400;
+            } else {
+                callCharge = 50 * 600 + 150 * 400 + (minutes - 200) * 200;
+            }
+            if (messages <= 50) {
+                messagesCharge = messages * 200;
+            } else {
+                messagesCharge = 50 * 200 + (messages - 50) * 100;
+            }
+            totalCharge = callCharge + messagesCharge;
+            document.getElementById("result").innerHTML = "Cước điện thoại" + totalCharge + "đồng"
+        }
+    </script>
+</body>
+
+</html>
